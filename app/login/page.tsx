@@ -36,8 +36,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="grid min-h-screen grid-cols-[1.05fr_0.95fr] bg-paper">
-      <div className="relative flex flex-col justify-between overflow-hidden bg-ink px-[60px] py-14 text-on-dark">
+    <div className="grid min-h-screen grid-cols-1 bg-paper lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="hidden flex-col justify-between overflow-hidden bg-ink px-[60px] py-14 text-on-dark lg:relative lg:flex">
         <div
           className="absolute inset-0 opacity-50"
           style={{
@@ -63,7 +63,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <div className="relative flex gap-[26px] font-mono text-[11px] tracking-[0.14em] text-on-dark/40">
+        <div className="relative flex flex-wrap gap-[26px] font-mono text-[11px] tracking-[0.14em] text-on-dark/40">
           <span>PERSONAL</span>
           <span>·</span>
           <span>PRIVADO</span>
@@ -72,8 +72,13 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center p-12">
+      <div className="flex items-center justify-center p-6 sm:p-12">
         <div className="w-full max-w-[360px] animate-fade-up">
+          <div className="mb-8 flex items-center gap-3 lg:hidden">
+            <LogoBadge size={30} radius={7} glyphSize={16} />
+            <Wordmark className="text-[19px]" />
+          </div>
+
           <h2 className="mb-[6px] font-display text-[28px] font-medium">
             Iniciar sesión
           </h2>

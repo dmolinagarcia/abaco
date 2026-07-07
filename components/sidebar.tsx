@@ -2,19 +2,35 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { X } from "lucide-react";
 import { LogoBadge, Wordmark } from "@/components/logo";
 import { LogoutButton } from "@/components/logout-button";
 import { NAV_ITEMS } from "@/lib/nav";
 
-export function Sidebar({ userLabel }: { userLabel: string }) {
+export function Sidebar({
+  userLabel,
+  onClose,
+}: {
+  userLabel: string;
+  onClose?: () => void;
+}) {
   const pathname = usePathname();
   const initial = userLabel.charAt(0).toUpperCase();
 
   return (
-    <aside className="sticky top-0 flex h-screen flex-col bg-ink px-4 py-[22px] text-on-dark">
-      <div className="flex items-center gap-[11px] px-2 pb-[22px] pt-[6px]">
-        <LogoBadge size={30} radius={7} glyphSize={16} />
-        <Wordmark className="text-[19px]" />
+    <aside className="flex h-full w-[248px] flex-col bg-ink px-4 py-[22px] text-on-dark">
+      <div className="flex items-center justify-between gap-[11px] px-2 pb-[22px] pt-[6px]">
+        <div className="flex items-center gap-[11px]">
+          <LogoBadge size={30} radius={7} glyphSize={16} />
+          <Wordmark className="text-[19px]" />
+        </div>
+        <button
+          onClick={onClose}
+          aria-label="Cerrar menú"
+          className="flex rounded-[6px] p-1 text-on-dark/50 hover:bg-on-dark/8 hover:text-on-dark lg:hidden"
+        >
+          <X size={18} />
+        </button>
       </div>
 
       <div className="px-[10px] pb-[10px] font-mono text-[10px] tracking-[0.16em] text-on-dark/34">
@@ -46,6 +62,7 @@ export function Sidebar({ userLabel }: { userLabel: string }) {
             <Link
               key={item.id}
               href={item.href}
+              onClick={onClose}
               className={`flex w-full items-center justify-between gap-2 rounded-[9px] px-[11px] py-[10px] transition-colors ${
                 isActive
                   ? "bg-accent/22 text-on-dark"

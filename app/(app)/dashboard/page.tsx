@@ -6,7 +6,7 @@ import { Button } from "@/components/button";
 export default function DashboardPage() {
   return (
     <>
-      <div className="mb-[18px] grid grid-cols-3 gap-[18px]">
+      <div className="mb-[18px] grid grid-cols-1 gap-[18px] sm:grid-cols-3">
         <GhostCard />
         <GhostCard />
         <GhostCard />
@@ -18,8 +18,12 @@ export default function DashboardPage() {
         description="Aún no hay contenido. Los indicadores y resúmenes de tus carteras aparecerán aquí en próximas iteraciones."
         actions={
           <>
-            <Button variant="primary">Empezar a configurar</Button>
-            <Button variant="secondary">Ver documentación</Button>
+            <Button variant="primary" className="w-full sm:w-auto">
+              Empezar a configurar
+            </Button>
+            <Button variant="secondary" className="w-full sm:w-auto">
+              Ver documentación
+            </Button>
           </>
         }
       />

@@ -4,7 +4,10 @@
       "Bash(npx tsc *)",
       "Bash(npm run *)",
       "Bash(NEXT_PUBLIC_SUPABASE_URL=\"https://placeholder.supabase.co\" NEXT_PUBLIC_SUPABASE_ANON_KEY=\"placeholder\" npm run build)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/login)",
+      "Bash(kill 48018 48019)",
+      "Bash(curl -s http://localhost:3000/login)"
     ]
   }
 }
