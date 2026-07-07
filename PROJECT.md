@@ -57,13 +57,13 @@ siendo `name`. Fija los nombres aquí y respétalos en las dos herramientas.
 > (búsqueda, filtros, export...) al final.
 
 ### Ciclo 0 — Esqueleto
-- [ ] Layout base en Design (navegación + cabecera, sin features dentro)
-- [ ] Proyecto Next.js arrancado + Supabase conectado
-- [ ] Autenticación (login / logout) funcionando
+- [x] Layout base en Design (navegación + cabecera, sin features dentro)
+- [x] Proyecto Next.js arrancado + Supabase conectado
+- [x] Autenticación (login / logout) funcionando
 - **Criterio de cierre:** puedo iniciar sesión y ver una app vacía pero navegable.
 
 ### Hechas
-- _(vacío por ahora)_
+- **Ciclo 0 — Esqueleto**: layout base (Sidebar + Header), proyecto Next.js (App Router) + Supabase conectado, autenticación con Supabase Auth (login/logout) y protección de rutas. Verificado: login → dashboard vacío → logout.
 
 ### En curso
 - **Feature actual:** _(nombre)_ — _(qué hace en una línea)_
